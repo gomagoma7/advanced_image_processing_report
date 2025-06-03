@@ -115,7 +115,7 @@ class PerfectOpenCVCalibration:
                 failed_detections += 1
                 print(f"✗ No corners detected in {Path(image_file).name}")
         
-        print(f"\nCorner Detection Summary:")
+        print("\nCorner Detection Summary:")
         print(f"✓ Successful: {successful_detections}")
         print(f"✗ Failed: {failed_detections}")
         print(f"Success rate: {successful_detections/(successful_detections+failed_detections)*100:.1f}%")
@@ -137,7 +137,7 @@ class PerfectOpenCVCalibration:
             flags=cv2.CALIB_RATIONAL_MODEL  # 高次歪みモデルを使用
         )
         
-        print(f"✓ Calibration successful!")
+        print("✓ Calibration successful!")
         print(f"RMS reprojection error: {self.rms_error:.4f} pixels")
         
         return True
@@ -157,7 +157,7 @@ class PerfectOpenCVCalibration:
         cx, cy = self.camera_matrix[0, 2], self.camera_matrix[1, 2]
         
         print(f"✓ RMS Reprojection Error: {self.rms_error:.4f} pixels")
-        print(f"\nCamera Intrinsic Parameters:")
+        print("\nCamera Intrinsic Parameters:")
         print(f"  Focal length: fx={fx:.2f}, fy={fy:.2f} pixels")
         print(f"  Principal point: cx={cx:.2f}, cy={cy:.2f}")
         print(f"  Aspect ratio: {fy/fx:.6f}")
@@ -165,18 +165,18 @@ class PerfectOpenCVCalibration:
         
         # 歪み係数の分析
         dist_coeffs = self.dist_coeffs.flatten()
-        print(f"\nDistortion Coefficients:")
-        print(f"  Radial distortion:")
+        print("\nDistortion Coefficients:")
+        print("  Radial distortion:")
         print(f"    k1 = {dist_coeffs[0]:.6f}")
         print(f"    k2 = {dist_coeffs[1]:.6f}")
         if len(dist_coeffs) > 4:
             print(f"    k3 = {dist_coeffs[4]:.6f}")
-        print(f"  Tangential distortion:")
+        print("  Tangential distortion:")
         print(f"    p1 = {dist_coeffs[2]:.6f}")
         print(f"    p2 = {dist_coeffs[3]:.6f}")
         
         # 品質評価（実用的な基準に修正）
-        print(f"\nCalibration Quality Assessment:")
+        print("\nCalibration Quality Assessment:")
         if self.rms_error < 1.0:
             quality = "Excellent"
             print(f"✓ {quality} calibration (< 1.0 pixels)")
@@ -191,7 +191,7 @@ class PerfectOpenCVCalibration:
             print(f"✗ {quality} calibration (>= 3.0 pixels)")
         
         # 実用性の判定
-        print(f"\nPractical Usability:")
+        print("\nPractical Usability:")
         if self.rms_error < 2.0:
             print("✓ Suitable for high-precision applications")
         elif self.rms_error < 4.0:
@@ -239,7 +239,7 @@ class PerfectOpenCVCalibration:
         dist_values = self.dist_coeffs.flatten()[:5]
         colors = ['red' if abs(v) > 0.1 else 'blue' if abs(v) > 0.01 else 'gray' for v in dist_values]
         
-        bars2 = ax2.bar(dist_labels, dist_values, color=colors, alpha=0.7)
+        _ = ax2.bar(dist_labels, dist_values, color=colors, alpha=0.7)
         ax2.set_ylabel('Distortion Coefficient')
         ax2.set_title('Distortion Coefficients')
         ax2.grid(True, alpha=0.3)
@@ -422,11 +422,11 @@ class PerfectOpenCVCalibration:
         
         print(f"✓ All results saved to {self.output_dir}/")
         print("Generated files:")
-        print(f"  - opencv_calibration.npz (calibration data)")
-        print(f"  - calibration_summary.json (structured summary)")
-        print(f"  - calibration_report.txt (human-readable report)")
-        print(f"  - opencv_calibration_analysis.png (visualization)")
-        print(f"  - undistortion_demo.png (undistortion demo)")
+        print("  - opencv_calibration.npz (calibration data)")
+        print("  - calibration_summary.json (structured summary)")
+        print("  - calibration_report.txt (human-readable report)")
+        print("  - opencv_calibration_analysis.png (visualization)")
+        print("  - undistortion_demo.png (undistortion demo)")
     
     def load_results(self):
         """保存された校正結果を読み込み"""
@@ -489,24 +489,24 @@ class PerfectOpenCVCalibration:
             print("Failed to detect corners in any image!")
             return False
         
-        print(f"\nStep 2: Calibrating camera with OpenCV...")
+        print("\nStep 2: Calibrating camera with OpenCV...")
         if not self.calibrate_camera():
             print("Calibration failed!")
             return False
         
-        print(f"\nStep 3: Analyzing calibration results...")
-        results = self.analyze_calibration_results()
+        print("\nStep 3: Analyzing calibration results...")
+        _ = self.analyze_calibration_results()
         
-        print(f"\nStep 4: Visualizing results...")
+        print("\nStep 4: Visualizing results...")
         self.visualize_results()
         
-        print(f"\nStep 5: Demonstrating undistortion...")
+        print("\nStep 5: Demonstrating undistortion...")
         self.demonstrate_undistortion()
         
-        print(f"\nStep 6: Saving all results...")
+        print("\nStep 6: Saving all results...")
         self.save_results()
         
-        print(f"\n" + "="*60)
+        print("\n" + "="*60)
         print("PERFECT OPENCV CALIBRATION COMPLETED!")
         print("="*60)
         print(f"✓ RMS Error: {self.rms_error:.4f} pixels")
