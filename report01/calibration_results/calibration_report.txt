@@ -1,0 +1,20 @@
+OpenCV Camera Calibration Report
+==================================================
+
+Experiment Date: 2025-06-03 16:52:35
+OpenCV Version: 4.11.0
+
+Configuration:
+- Checkerboard size: (7, 7) (internal corners)
+- Square size: 20.0 mm
+- Images processed: 19
+- Image resolution: 1920×1080
+
+Calibration Results:
+- RMS reprojection error: 2.9017 pixels
+- Focal length: fx=1824.32, fy=1826.65
+- Principal point: cx=893.24, cy=544.59
+- Aspect ratio: 1.001275
+
+Quality Assessment:
+✓ Acceptable calibration (< 3.0 pixels)
