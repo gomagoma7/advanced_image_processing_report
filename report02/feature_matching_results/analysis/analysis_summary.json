@@ -1,0 +1,85 @@
+{
+  "detector_analysis": {
+    "SIFT": {
+      "total_runs": 14,
+      "successful_runs": 14,
+      "total_matches": 17089,
+      "total_inliers": 1287,
+      "total_detection_time": 35.091418504714966,
+      "avg_match_quality": 7.956881939764842,
+      "avg_matches": 1220.642857142857,
+      "avg_inliers": 91.92857142857143,
+      "avg_detection_time": 2.506529893193926,
+      "success_rate": 100.0
+    },
+    "ORB": {
+      "total_runs": 14,
+      "successful_runs": 13,
+      "total_matches": 662,
+      "total_inliers": 432,
+      "total_detection_time": 3.0248348712921143,
+      "avg_match_quality": 9.457142857142857,
+      "avg_matches": 47.285714285714285,
+      "avg_inliers": 30.857142857142858,
+      "avg_detection_time": 0.21605963366372244,
+      "success_rate": 92.85714285714286
+    },
+    "AKAZE": {
+      "total_runs": 14,
+      "successful_runs": 14,
+      "total_matches": 10881,
+      "total_inliers": 1043,
+      "total_detection_time": 17.660004138946533,
+      "avg_match_quality": 7.125944846931039,
+      "avg_matches": 777.2142857142857,
+      "avg_inliers": 74.5,
+      "avg_detection_time": 1.2614288670676095,
+      "success_rate": 100.0
+    },
+    "KAZE": {
+      "total_runs": 14,
+      "successful_runs": 14,
+      "total_matches": 26743,
+      "total_inliers": 1854,
+      "total_detection_time": 123.29419994354248,
+      "avg_match_quality": 15.794378801552126,
+      "avg_matches": 1910.2142857142858,
+      "avg_inliers": 132.42857142857142,
+      "avg_detection_time": 8.806728567395892,
+      "success_rate": 100.0
+    },
+    "BRISK": {
+      "total_runs": 14,
+      "successful_runs": 14,
+      "total_matches": 17686,
+      "total_inliers": 1467,
+      "total_detection_time": 17.167492866516113,
+      "avg_match_quality": 6.87380547032374,
+      "avg_matches": 1263.2857142857142,
+      "avg_inliers": 104.78571428571429,
+      "avg_detection_time": 1.2262494904654366,
+      "success_rate": 100.0
+    }
+  },
+  "matcher_analysis": {
+    "BF": {
+      "total_runs": 35,
+      "successful_runs": 34,
+      "total_matches": 35008,
+      "total_matching_time": 197.60176587104797,
+      "avg_matches": 1000.2285714285714,
+      "avg_matching_time": 5.645764739172799,
+      "success_rate": 97.14285714285714
+    },
+    "FLANN": {
+      "total_runs": 35,
+      "successful_runs": 35,
+      "total_matches": 38053,
+      "total_matching_time": 15.44723105430603,
+      "avg_matches": 1087.2285714285715,
+      "avg_matching_time": 0.441349458694458,
+      "success_rate": 100.0
+    }
+  },
+  "total_experiments": 70
+}
